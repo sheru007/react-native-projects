@@ -25,6 +25,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import PasswordScreen from './projects/PasswordScreen';
 import WelcomeScreen from './projects/WelcomeScreen';
 import TabsScreen from './projects/TabsScreen';
+import CarRentalScreen from './projects/CarRentalScreen';
 
 // type SectionProps = PropsWithChildren<{
 //   title: string;
@@ -67,7 +68,10 @@ function Home({ navigation }): React.JSX.Element {
       <View style={styles.btn}>
         <Button title="Tabs Screen" onPress={() => navigation.navigate('Tabs')} />
       </View>
-      
+      <View style={styles.btn}>
+        <Button title="Car Rental Screen" onPress={() => navigation.navigate('CarRental')} />
+      </View>
+
     </View>
   </ScrollView>)
 }
@@ -85,6 +89,7 @@ function App(): React.JSX.Element {
         <Stack.Screen name='Home' component={Home} />
         <Stack.Screen name='Code Confirmation' component={PasswordScreen} />
         <Stack.Screen name='Tabs' component={TabsScreen} />
+        <Stack.Screen name='CarRental' component={CarRentalScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
